@@ -1,6 +1,5 @@
 from enum import Enum
 
-# --- ENUMERACIONES ---
 class tipoCom(Enum):
     GASOLINA = "Gasolina"; BIOETANOL = "Bioetanol"; DIESEL = "Diésel"
     BIODISESEL = "Biodiésel"; GAS_NATURAL = "Gas natural"
@@ -13,7 +12,6 @@ class tipoColor(Enum):
     BLANCO = "Blanco"; NEGRO = "Negro"; ROJO = "Rojo"; NARANJA = "Naranja"
     AMARILLO = "Amarillo"; VERDE = "Verde"; AZUL = "Azul"; VIOLETA = "Violeta"
 
-# --- CLASE PRINCIPAL ---
 class Automovil:
     
     def __init__(self, marca, modelo, motor, tipoCombustible, tipoAutomovil, numeroPuertas, cantidadAsientos, velocidadMaxima, color, esAutomatico):
@@ -32,7 +30,6 @@ class Automovil:
         self.valorMultas = 0.0
         self.cantidadMultas = 0
 
-    # --- MÉTODOS GET Y SET ---
     def getMarca(self): return self.marca
     def setMarca(self, marca): self.marca = marca
     
@@ -66,7 +63,6 @@ class Automovil:
     def getEsAutomatico(self): return self.esAutomatico
     def setEsAutomatico(self, esAutomatico): self.esAutomatico = esAutomatico
 
-    # --- MÉTODOS DE COMPORTAMIENTO ---
     def acelerar(self, incrementoVelocidad):
         if self.velocidadActual + incrementoVelocidad <= self.velocidadMaxima:
             self.velocidadActual += incrementoVelocidad
@@ -108,8 +104,6 @@ class Automovil:
     def calcularValorTotalMultas(self):
         return self.valorMultas
 
-
-# --- EJECUCIÓN DEL PROGRAMA (MÉTODO MAIN) ---
 print("=== INGRESO DE DATOS DEL VEHÍCULO ===")
 m_marca = input("Marca: ")
 m_modelo = int(input("Modelo (Año): "))
@@ -149,7 +143,6 @@ elif opc_color == '6': m_color = tipoColor.VERDE
 elif opc_color == '7': m_color = tipoColor.AZUL
 else: m_color = tipoColor.VIOLETA
 
-# Instanciamos el objeto
 auto1 = Automovil(m_marca, m_modelo, m_motor, m_combustible, m_tipo, m_puertas, m_asientos, m_vel_max, m_color, m_automatico)
 
 print("\n=== DATOS IMPRESOS ===")
